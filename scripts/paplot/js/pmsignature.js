@@ -1,4 +1,4 @@
-var pmsignature = (function()
+pmsignature = (function()
 {
 
     var pmsignature = function(id)
