@@ -43,7 +43,7 @@ class TestSet(unittest.TestCase):
         name = sys._getframe().f_code.co_name
         subprocess.check_call('python paplot ca "%s/header_id/SAMPLE*.csv" %s %s -c %s/header_id/csv.cfg' % (self.dataset, self.ALT, name, self.dataset), shell=True)
 
-        ref = test_utils.load_text(self.REF + "test1_01_sample_header_id_csv" + "/data_ca.js")
+        ref = test_utils.load_text(self.REF + "test1_01_sample_header_id_csv/data_ca.js")
         alt = test_utils.load_text(self.ALT + name + "/data_ca.js")
         self.assertEqual(ref, alt)
         
@@ -55,7 +55,7 @@ class TestSet(unittest.TestCase):
         name = sys._getframe().f_code.co_name
         subprocess.check_call('python paplot ca "%s/header_id/SAMPLE*.tsv" %s %s -c %s/header_id/tsv.cfg' % (self.dataset, self.ALT, name, self.dataset), shell=True)
         
-        ref = test_utils.load_text(self.REF + "test1_01_sample_header_id_csv" + "/data_ca.js")
+        ref = test_utils.load_text(self.REF + "test1_01_sample_header_id_csv/data_ca.js")
         alt = test_utils.load_text(self.ALT + name + "/data_ca.js")
         self.assertEqual(ref, alt)
         
@@ -67,7 +67,7 @@ class TestSet(unittest.TestCase):
         name = sys._getframe().f_code.co_name
         subprocess.check_call('python paplot ca "%s/header_id/merge.csv" %s %s -c %s/header_id/csv.cfg' % (self.dataset, self.ALT, name, self.dataset), shell=True)
 
-        ref = test_utils.load_text(self.REF + "test1_01_sample_header_id_csv" + "/data_ca.js")
+        ref = test_utils.load_text(self.REF + "test1_01_sample_header_id_csv/data_ca.js")
         alt = test_utils.load_text(self.ALT + name + "/data_ca.js")
         self.assertEqual(ref, alt)
         
@@ -79,7 +79,7 @@ class TestSet(unittest.TestCase):
         name = sys._getframe().f_code.co_name
         subprocess.check_call('python paplot ca "%s/header_id/merge.tsv" %s %s -c %s/header_id/tsv.cfg' % (self.dataset, self.ALT, name, self.dataset), shell=True)
         
-        ref = test_utils.load_text(self.REF + "test1_01_sample_header_id_csv" + "/data_ca.js")
+        ref = test_utils.load_text(self.REF + "test1_01_sample_header_id_csv/data_ca.js")
         alt = test_utils.load_text(self.ALT + name + "/data_ca.js")
         self.assertEqual(ref, alt)
         
@@ -91,7 +91,7 @@ class TestSet(unittest.TestCase):
         name = sys._getframe().f_code.co_name
         subprocess.check_call('python paplot ca "%s/noheader_id/SAMPLE*.csv" %s %s -c %s/noheader_id/csv.cfg' % (self.dataset, self.ALT, name, self.dataset), shell=True)
         
-        ref = test_utils.load_text(self.REF + "test1_01_sample_header_id_csv" + "/data_ca.js")
+        ref = test_utils.load_text(self.REF + "test1_01_sample_header_id_csv/data_ca.js")
         alt = test_utils.load_text(self.ALT + name + "/data_ca.js")
         self.assertEqual(ref, alt)
         
@@ -103,7 +103,7 @@ class TestSet(unittest.TestCase):
         name = sys._getframe().f_code.co_name
         subprocess.check_call('python paplot ca "%s/noheader_id/SAMPLE*.tsv" %s %s -c %s/noheader_id/tsv.cfg' % (self.dataset, self.ALT, name, self.dataset), shell=True)
         
-        ref = test_utils.load_text(self.REF + "test1_01_sample_header_id_csv" + "/data_ca.js")
+        ref = test_utils.load_text(self.REF + "test1_01_sample_header_id_csv/data_ca.js")
         alt = test_utils.load_text(self.ALT + name + "/data_ca.js")
         self.assertEqual(ref, alt)
         
@@ -115,7 +115,7 @@ class TestSet(unittest.TestCase):
         name = sys._getframe().f_code.co_name
         subprocess.check_call('python paplot ca "%s/noheader_id/merge.csv" %s %s -c %s/noheader_id/csv.cfg' % (self.dataset, self.ALT, name, self.dataset), shell=True)
         
-        ref = test_utils.load_text(self.REF + "test1_01_sample_header_id_csv" + "/data_ca.js")
+        ref = test_utils.load_text(self.REF + "test1_01_sample_header_id_csv/data_ca.js")
         alt = test_utils.load_text(self.ALT + name + "/data_ca.js")
         self.assertEqual(ref, alt)
         
@@ -127,7 +127,7 @@ class TestSet(unittest.TestCase):
         name = sys._getframe().f_code.co_name
         subprocess.check_call('python paplot ca "%s/noheader_id/merge.tsv" %s %s -c %s/noheader_id/tsv.cfg' % (self.dataset, self.ALT, name, self.dataset), shell=True)
         
-        ref = test_utils.load_text(self.REF + "test1_01_sample_header_id_csv" + "/data_ca.js")
+        ref = test_utils.load_text(self.REF + "test1_01_sample_header_id_csv/data_ca.js")
         alt = test_utils.load_text(self.ALT + name + "/data_ca.js")
         self.assertEqual(ref, alt)
         
@@ -139,7 +139,7 @@ class TestSet(unittest.TestCase):
         name = sys._getframe().f_code.co_name
         subprocess.check_call('python paplot ca "%s/header_noid/SAMPLE*.csv" %s %s -c %s/header_noid/csv.cfg' % (self.dataset, self.ALT, name, self.dataset), shell=True)
 
-        ref = test_utils.load_text(self.REF + "test1_01_sample_header_id_csv" + "/data_ca.js")
+        ref = test_utils.load_text(self.REF + "test1_01_sample_header_id_csv/data_ca.js")
         alt = test_utils.load_text(self.ALT + name + "/data_ca.js")
         self.assertEqual(ref, alt)
         
@@ -151,7 +151,7 @@ class TestSet(unittest.TestCase):
         name = sys._getframe().f_code.co_name
         subprocess.check_call('python paplot ca "%s/header_noid/SAMPLE*.tsv" %s %s -c %s/header_noid/tsv.cfg' % (self.dataset, self.ALT, name, self.dataset), shell=True)
         
-        ref = test_utils.load_text(self.REF + "test1_01_sample_header_id_csv" + "/data_ca.js")
+        ref = test_utils.load_text(self.REF + "test1_01_sample_header_id_csv/data_ca.js")
         alt = test_utils.load_text(self.ALT + name + "/data_ca.js")
         self.assertEqual(ref, alt)
         
@@ -163,7 +163,7 @@ class TestSet(unittest.TestCase):
         name = sys._getframe().f_code.co_name
         subprocess.check_call('python paplot ca "%s/noheader_noid/SAMPLE*.csv" %s %s -c %s/noheader_noid/csv.cfg' % (self.dataset, self.ALT, name, self.dataset), shell=True)
         
-        ref = test_utils.load_text(self.REF + "test1_01_sample_header_id_csv" + "/data_ca.js")
+        ref = test_utils.load_text(self.REF + "test1_01_sample_header_id_csv/data_ca.js")
         alt = test_utils.load_text(self.ALT + name + "/data_ca.js")
         self.assertEqual(ref, alt)
         
@@ -175,7 +175,7 @@ class TestSet(unittest.TestCase):
         name = sys._getframe().f_code.co_name
         subprocess.check_call('python paplot ca "%s/noheader_noid/SAMPLE*.tsv" %s %s -c %s/noheader_noid/tsv.cfg' % (self.dataset, self.ALT, name, self.dataset), shell=True)
         
-        ref = test_utils.load_text(self.REF + "test1_01_sample_header_id_csv" + "/data_ca.js")
+        ref = test_utils.load_text(self.REF + "test1_01_sample_header_id_csv/data_ca.js")
         alt = test_utils.load_text(self.ALT + name + "/data_ca.js")
         self.assertEqual(ref, alt)
         

@@ -1,9 +1,11 @@
 {
   "name": "paplot-test",
   "version": "0.5.6",
-  "description": "Tests of paplot",
-  "main": "test.js",
-  "directories": {},
+  "description": "Tests for paplot outputs",
+  "main": "test/test.js",
+  "directories": {
+    "test": "test"
+  },
   "dependencies": {},
   "devDependencies": {
     "intelli-espower-loader": "^1.0.1",
@@ -13,7 +15,7 @@
     "power-assert": "^1.4.4"
   },
   "scripts": {
-    "test": "istanbul cover --print both _mocha -- test/test.js --require intelli-espower-loader --timeout 10000"
+    "test": "istanbul cover --print both _mocha -- js/test.js --require intelli-espower-loader --timeout 10000 --config=test/.istanbul.yml"
   },
   "author": "Ai Okada <aiokada@hgc.jp>",
   "license": "MIT"

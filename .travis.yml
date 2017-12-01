@@ -1,4 +1,4 @@
-language: python
+language: python, node
 python:
   - "2.7"
   - "3.3"
@@ -6,10 +6,17 @@ python:
   - "3.5"
   - "3.6"
 
+node_js:
+  - "node"
+
 script:
   - python setup.py build install
   - python setup.py test
   - bash tests/build_example.sh
+  - npm test
+
+before_script:
+  - npm install
 
 notifications:
   emails:

@@ -25,4 +25,8 @@ def suite():
     import test_pmsignature
     suite.addTests(unittest.makeSuite(test_pmsignature.TestSet))
     
+    import test_pre_cover
+    suite.addTests(unittest.makeSuite(test_pre_cover.TestSet))
+    
+    
     return suite
