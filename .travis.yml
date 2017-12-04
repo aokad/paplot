@@ -1,4 +1,4 @@
-sudo: required
+sudo: false
 
 language: python
 python:
@@ -8,13 +8,19 @@ python:
   - "3.5"
   - "3.6"
 
+addons:
+  apt:
+    packages:
+      - nodejs
+      - npm
+    
 script:
   - python setup.py build install
   - python setup.py test
   - bash tests/build_example.sh
 
 before_install:
- - apt-get install -y nodejs npm
+ - nodejs -v
 
 notifications:
   emails:
