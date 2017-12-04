@@ -6,7 +6,7 @@
 </head>
 <body>
 <div class="version">
-Generated on 2017-12-01 16:02:05 for test1_01_sample_header_id_csv by paplot-0.5.6.
+Generated on 2017-12-04 13:45:28 for test1_01_sample_header_id_csv by paplot-0.5.6.
 </div>
 
 <div class="container">
@@ -55,6 +55,17 @@ qc_draw.add_div('chart_4');
 qc_draw.divs[3].obj.bar_selected = function(key, on) { qc_draw.chart_selected(key, on); }
 
 qc_draw.init();
+
+// resize timer
+var timer = false;
+window.addEventListener('resize', function() {
+    if (timer !== false) {
+        clearTimeout(timer);
+    }
+    timer = setTimeout(function() {
+        qc_draw.resize();
+    }, 200);
+});
 </script>
 </body>
 </html>

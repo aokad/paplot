@@ -6,7 +6,7 @@
 </head>
 <body>
 <div class="version">
-Generated on 2017-12-01 16:02:51 for test1_02_stack by paplot-0.5.6.
+Generated on 2017-12-04 13:46:11 for test1_02_stack by paplot-0.5.6.
 </div>
 
 <div class="container">
@@ -61,6 +61,18 @@ Generated on 2017-12-01 16:02:51 for test1_02_stack by paplot-0.5.6.
 msig_draw.add_div('div_pm0');
 
 msig_draw.init();
+
+// resize timer
+var timer = false;
+
+window.addEventListener('resize', function() {
+    if (timer !== false) {
+        clearTimeout(timer);
+    }
+    timer = setTimeout(function() {
+        msig_draw.resize();
+    }, 200);
+});
 </script>
 </body>
 </html>

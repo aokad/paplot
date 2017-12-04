@@ -1,5 +1,10 @@
+const assert = require('power-assert');
 require('./test_function.js');
-test_function.run();
+require('./test_jsdom.js');
 
-//require('./test_jsdom.js');
-//test_jsdom.run();
+describe( 'Tests...', function () {
+
+    test_function.run();
+    
+    test_jsdom.run();
+})

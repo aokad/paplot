@@ -546,22 +546,6 @@ ca_draw.resize_if = function () {
 
 })();
 
-// *********************************************
-// resize timer
-// *********************************************
-
-var timer = false;
-window.addEventListener('resize', function() {
-    if (timer !== false) {
-        clearTimeout(timer);
-    }
-    timer = setTimeout(function() {
-        ca_draw.update_div();
-        ca_draw.resize_if(); //div_select_bar.resize();
-        ca_draw.thumb_reset();
-    }, 200);
-});
-
 bundle_update = function()
 {
     ca_draw.bundle_update()

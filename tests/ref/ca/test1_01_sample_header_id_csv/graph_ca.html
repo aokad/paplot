@@ -8,7 +8,7 @@
 <body>
 
 <div class="version">
-Generated on 2017-12-01 16:02:15 for test1_01_sample_header_id_csv by paplot-0.5.6.
+Generated on 2017-12-04 13:45:37 for test1_01_sample_header_id_csv by paplot-0.5.6.
 </div>
 
 <div class="container">
@@ -64,6 +64,19 @@ ca_draw.draw_bandle_thumb("0", "SAMPLE00");
 ca_draw.draw_bandle_thumb("1", "SAMPLE01");
 ca_draw.draw_bandle_thumb("2", "SAMPLE02");
 
+
+// resize timer
+var timer = false;
+window.addEventListener('resize', function() {
+    if (timer !== false) {
+        clearTimeout(timer);
+    }
+    timer = setTimeout(function() {
+        ca_draw.update_div();
+        ca_draw.resize_if(); //div_select_bar.resize();
+        ca_draw.thumb_reset();
+    }, 200);
+});
 </script>
 </body>
 </html>

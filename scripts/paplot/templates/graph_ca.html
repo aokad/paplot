@@ -55,6 +55,19 @@ Generated on {date} for {project} by {version}.
 <script>
 ca_draw.draw_select();
 {call_list}
+
+// resize timer
+var timer = false;
+window.addEventListener('resize', function() {{
+    if (timer !== false) {{
+        clearTimeout(timer);
+    }}
+    timer = setTimeout(function() {{
+        ca_draw.update_div();
+        ca_draw.resize_if(); //div_select_bar.resize();
+        ca_draw.thumb_reset();
+    }}, 200);
+}});
 </script>
 </body>
 </html>

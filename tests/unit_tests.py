@@ -10,20 +10,20 @@ import unittest
 def suite():
     suite = unittest.TestSuite()
 
-    #import test_qc
-    #suite.addTests(unittest.makeSuite(test_qc.TestSet))
-    #
-    #import test_ca
-    #suite.addTests(unittest.makeSuite(test_ca.TestSet))
-    #
-    #import test_mutation
-    #suite.addTests(unittest.makeSuite(test_mutation.TestSet))
-    #
-    #import test_signature
-    #suite.addTests(unittest.makeSuite(test_signature.TestSet))
-    #
-    #import test_pmsignature
-    #suite.addTests(unittest.makeSuite(test_pmsignature.TestSet))
+    import test_qc
+    suite.addTests(unittest.makeSuite(test_qc.TestSet))
+    
+    import test_ca
+    suite.addTests(unittest.makeSuite(test_ca.TestSet))
+    
+    import test_mutation
+    suite.addTests(unittest.makeSuite(test_mutation.TestSet))
+    
+    import test_signature
+    suite.addTests(unittest.makeSuite(test_signature.TestSet))
+    
+    import test_pmsignature
+    suite.addTests(unittest.makeSuite(test_pmsignature.TestSet))
     
     import test_pre_cover
     suite.addTests(unittest.makeSuite(test_pre_cover.TestSet))

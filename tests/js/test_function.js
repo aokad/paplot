@@ -16,21 +16,29 @@ require('../src/html/data_pmsignature2.js');
 
                 // TODO: , 区切りのtooltipテストケース追加
 
-                it('qc_data.get_plot_config.1', () => {
+                describe('qc_data.get_plot_config.1', () => {
                     var tooltip = qc_data.get_plot_config('chart_brush');
-                    assert.equal(tooltip.title, '')
+                    it('qc_data.get_plot_config.1.1', () => {
+                       assert.equal(tooltip.title, '')
+                    })
                 })
-                it('qc_data.get_plot_config.2', () => {
-                    var tooltip = qc_data.get_plot_config('');
-                    assert.equal(tooltip, null)
+                describe('qc_data.get_plot_config.2', () => {
+                    it('qc_data.get_plot_config.2.1', () => {
+                        var tooltip = qc_data.get_plot_config('');
+                        assert.equal(tooltip, null)
+                    })
                 })
-                it('qc_data.get_dataset.1', () => {
-                    var dataset = qc_data.get_dataset ('chart_brush');
-                    assert.equal(dataset.data[0][0], 70.05);
+                describe('qc_data.get_dataset.1', () => {
+                    it('qc_data.get_dataset.1.1', () => {
+                        var dataset = qc_data.get_dataset ('chart_brush');
+                        assert.equal(dataset.data[0][0], 70.05);
+                    })
                 })
-                it('qc_data.get_dataset.2', () => {
-                    var dataset = qc_data.get_dataset ('chart_1');
-                    assert.equal(dataset.data[0][0], 70.05);
+                describe('qc_data.get_dataset.2', () => {
+                    it('qc_data.get_dataset.2.1', () => {
+                        var dataset = qc_data.get_dataset ('chart_1');
+                        assert.equal(dataset.data[0][0], 70.05);
+                    })
                 })
             })
 
@@ -161,10 +169,9 @@ require('../src/html/data_pmsignature2.js');
                 })
                 describe('mut_data.get_dataset_gene.1', () => {
                     var dataset = mut_data.get_dataset_gene({'exonic': true}, 0, 10, ["number_of_mutations"], [false]);
-                    console.log(dataset.data)
-                    //it('mut_data.get_dataset_gene.1.1', () => {
-                    //    assert.equal(dataset.data[3][0], 20);
-                    //})
+                    it('mut_data.get_dataset_gene.1.1', () => {
+                        assert.equal(dataset.data[3][0].toFixed(1), 33.3);
+                    })
                     it('mut_data.get_dataset_gene.1.2', () => {
                         assert.equal(dataset.keys[0][0], 'NFE2L2');
                     })
@@ -191,13 +198,13 @@ require('../src/html/data_pmsignature2.js');
                 describe('mut_data.get_sub_data.1', () => {
                     var dataset = mut_data.get_sub_data('sub0');
                     it('mut_data.get_sub_data.1.1', () => {
-                        assert.deepEqual(dataset.stack[0].data[0], 1);
+                        assert.deepEqual(dataset.stack[1].data[0], 1);
                     })
                     it('mut_data.get_sub_data.1.2', () => {
-                        assert.deepEqual(dataset.stack[0].keys[0], 'SAMPLE01');
+                        assert.deepEqual(dataset.stack[1].keys[0], 'SAMPLE00');
                     })
                     it('mut_data.get_sub_data.1.3', () => {
-                        assert.equal(dataset.stack[0].color_n, '#0000ff');
+                        assert.equal(dataset.stack[1].color_n, '#ff0000');
                     })
                     it('mut_data.get_sub_data.1.4', () => {
                         assert.deepEqual(dataset.tooltips['SAMPLE00'], ['SAMPLE00, F']);
@@ -213,13 +220,13 @@ require('../src/html/data_pmsignature2.js');
                 describe('mut_data.get_sub_data.2', () => {
                     var dataset = mut_data.get_sub_data('sub1');
                     it('mut_data.get_sub_data.2.1', () => {
-                        assert.deepEqual(dataset.stack[0].data[0], 1);
+                        assert.deepEqual(dataset.stack[1].data[0], 1);
                     })
                     it('mut_data.get_sub_data.2.2', () => {
-                        assert.deepEqual(dataset.stack[0].keys[0], 'SAMPLE21');
+                        assert.deepEqual(dataset.stack[1].keys[0], 'SAMPLE00');
                     })
                     it('mut_data.get_sub_data.2.3', () => {
-                        assert.equal(dataset.stack[0].color_n, '#E51721');
+                        assert.equal(dataset.stack[1].color_n, '#0079BA');
                         
                     })
                     it('mut_data.get_sub_data.2.4', () => {

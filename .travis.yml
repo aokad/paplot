@@ -14,7 +14,7 @@ addons:
     packages:
       - nodejs
       - npm
-    
+
 script:
   - python setup.py build install
   - python setup.py test

@@ -1,2 +1,2 @@
 instrumentation:
-    excludes: ['**/lib/*/*.js']
+    excludes: ['**/lib/*/*.js', '**/style/*.js']

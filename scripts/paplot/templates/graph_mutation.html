@@ -140,6 +140,17 @@ Generated on {date} for {project} by {version}.
     mut_draw.init();
     
 {set_sub_select}
+
+// resize timer
+var timer = false;
+window.addEventListener('resize', function() {{
+    if (timer !== false) {{
+        clearTimeout(timer);
+    }}
+    timer = setTimeout(function() {{
+        mut_draw.resize();
+    }}, 200);
+}});
 </script>
 </body>
 </html>

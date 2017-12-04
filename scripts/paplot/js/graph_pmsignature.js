@@ -529,18 +529,3 @@ msig_draw.resize = function () {
     }
 }
 })();
-
-// *********************************************
-// resize timer
-// *********************************************
-
-var timer = false;
-
-window.addEventListener('resize', function() {
-    if (timer !== false) {
-        clearTimeout(timer);
-    }
-    timer = setTimeout(function() {
-        msig_draw.resize();
-    }, 200);
-});

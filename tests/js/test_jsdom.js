@@ -127,6 +127,75 @@ require('../src/html/data_pmsignature2.js');
                 assert.equal(0,0)
             });
 
+            it("signature init", () => {
+
+                global.document.body.innerHTML =`
+                    <div class="container">
+
+                    <button type="button" onclick="sig_draw.push_export()" id="dw_btn" style="margin-bottom: 20px;"></button><div id="btn"></div>
+                    <div style='float: left;' id='div_pm0'></div>
+                    <div style='float: left;' id='div_pm1'></div>
+
+                    <div style="float: left;" id="div_rate"></div>
+                    <div style="float: left;" id='div_rate_legend_html'></div>
+                    <div style="float: left;" id='div_rate_legend_svg'></div>
+                    <div style="float: left;" id="div_integral"></div>
+                    <div style="float: left;" id='div_integral_legend_html'></div>
+                    <div style="float: left;" id='div_integral_legend_svg'></div>
+                    <select id="chart_mode"></select></p>
+                    <select id="chart_sort"></select></p>
+                    </div>
+
+                    <div id="tooltip" class="hidden"></div>
+                    <div id="spin" class="hidden"></div>
+                    <canvas id="dw_canvas" class="hidden"></canvas>
+                `;
+
+                d3 = require('../src/lib/d3_v3.5.13/d3.min.js');
+                require('../src/lib/d3-legend_v1.10.0/d3-legend.min.js');
+                require('../src/js/graph_signature.js')
+
+                sig_draw.add_div('div_pm0');
+                sig_draw.add_div('div_pm1');
+                sig_draw.init();
+                sig_draw.push_export();
+
+                assert.equal(0,0)
+            });
+
+            it("pmsignature init", () => {
+
+                global.document.body.innerHTML =`
+                    <div class="container">
+                    <button type="button" onclick="msig_draw.push_export()" id="dw_btn" style="margin-bottom: 20px;"></button><div id="btn"></div>
+                    <div style='float: left;' id='div_pm0'></div>
+
+                    <div style="float: left;" id="div_rate"></div>
+                    <div style="float: left;" id='div_rate_legend_html'></div>
+                    <div style="float: left;" id='div_rate_legend_svg'></div>
+                    <div style="float: left;" id="div_integral"></div>
+                    <div style="float: left;" id='div_integral_legend_html'></div>
+                    <div style="float: left;" id='div_integral_legend_svg'></div>
+                    <select id="chart_mode"></select></p>
+                    <select id="chart_sort"></select></p>
+                    </div>
+
+                    <div id="tooltip" class="hidden"></div>
+                    <div id="spin" class="hidden"></div>
+                    <canvas id="dw_canvas" class="hidden"></canvas>
+                `;
+
+                d3 = require('../src/lib/d3_v3.5.13/d3.min.js');
+                require('../src/lib/d3-legend_v1.10.0/d3-legend.min.js');
+                require('../src/js/graph_pmsignature.js')
+
+                msig_draw.add_div('div_pm0');
+                msig_draw.init();
+                msig_draw.push_export();
+
+                assert.equal(0,0)
+            });
+
             it("MutationMatrix init", () => {
 
                 global.document.body.innerHTML =`
@@ -205,7 +274,7 @@ require('../src/html/data_pmsignature2.js');
                 d3 = require('../src/lib/d3_v3.5.13/d3.min.js');
                 require('../src/lib/d3-legend_v1.10.0/d3-legend.min.js');
                 require('../src/js/graph_mutation.js')
-
+                
                 var subs = [];
 
                 subs.push(mut_draw.add_subdiv("div_sub0", "sub0", 1));
@@ -216,7 +285,7 @@ require('../src/html/data_pmsignature2.js');
                 subs[0].bar_selected = function(key, on) {mut_draw.sub_selected(key, on);}
                 subs[1].bar_selected = function(key, on) {mut_draw.sub_selected(key, on);}
                 subs[2].bar_selected = function(key, on) {mut_draw.sub_selected(key, on);}
-
+                
                 mut_draw.sort('sample_ID', 0, 'x');
                 mut_draw.sort('sample_ID', 1, 'x');
                 mut_draw.sort('sample_ID', 2, 'x');
@@ -248,77 +317,6 @@ require('../src/html/data_pmsignature2.js');
 
                 assert.equal(0,0)
             });
-
-
-            it("signature init", () => {
-
-                global.document.body.innerHTML =`
-                    <div class="container">
-
-                    <button type="button" onclick="sig_draw.push_export()" id="dw_btn" style="margin-bottom: 20px;"></button><div id="btn"></div>
-                    <div style='float: left;' id='div_pm0'></div>
-                    <div style='float: left;' id='div_pm1'></div>
-
-                    <div style="float: left;" id="div_rate"></div>
-                    <div style="float: left;" id='div_rate_legend_html'></div>
-                    <div style="float: left;" id='div_rate_legend_svg'></div>
-                    <div style="float: left;" id="div_integral"></div>
-                    <div style="float: left;" id='div_integral_legend_html'></div>
-                    <div style="float: left;" id='div_integral_legend_svg'></div>
-                    <select id="chart_mode"></select></p>
-                    <select id="chart_sort"></select></p>
-                    </div>
-
-                    <div id="tooltip" class="hidden"></div>
-                    <div id="spin" class="hidden"></div>
-                    <canvas id="dw_canvas" class="hidden"></canvas>
-                `;
-
-                d3 = require('../src/lib/d3_v3.5.13/d3.min.js');
-                require('../src/lib/d3-legend_v1.10.0/d3-legend.min.js');
-                require('../src/js/graph_signature.js')
-
-                sig_draw.add_div('div_pm0');
-                sig_draw.add_div('div_pm1');
-                sig_draw.init();
-                sig_draw.push_export();
-
-                assert.equal(0,0)
-            });
-
-            it("pmsignature init", () => {
-
-                global.document.body.innerHTML =`
-                    <div class="container">
-                    <button type="button" onclick="msig_draw.push_export()" id="dw_btn" style="margin-bottom: 20px;"></button><div id="btn"></div>
-                    <div style='float: left;' id='div_pm0'></div>
-
-                    <div style="float: left;" id="div_rate"></div>
-                    <div style="float: left;" id='div_rate_legend_html'></div>
-                    <div style="float: left;" id='div_rate_legend_svg'></div>
-                    <div style="float: left;" id="div_integral"></div>
-                    <div style="float: left;" id='div_integral_legend_html'></div>
-                    <div style="float: left;" id='div_integral_legend_svg'></div>
-                    <select id="chart_mode"></select></p>
-                    <select id="chart_sort"></select></p>
-                    </div>
-
-                    <div id="tooltip" class="hidden"></div>
-                    <div id="spin" class="hidden"></div>
-                    <canvas id="dw_canvas" class="hidden"></canvas>
-                `;
-
-                d3 = require('../src/lib/d3_v3.5.13/d3.min.js');
-                require('../src/lib/d3-legend_v1.10.0/d3-legend.min.js');
-                require('../src/js/graph_pmsignature.js')
-
-                msig_draw.add_div('div_pm0');
-                msig_draw.init();
-                msig_draw.push_export();
-
-                assert.equal(0,0)
-            });
-
         })
     }
 })();

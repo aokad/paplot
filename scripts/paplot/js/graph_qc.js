@@ -368,17 +368,3 @@ qc_draw.resize = function () {
 }
 
 })();
-
-// *********************************************
-// resize timer
-// *********************************************
-
-var timer = false;
-window.addEventListener('resize', function() {
-    if (timer !== false) {
-        clearTimeout(timer);
-    }
-    timer = setTimeout(function() {
-        qc_draw.resize();
-    }, 200);
-});
