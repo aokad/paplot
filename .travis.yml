@@ -19,6 +19,8 @@ script:
   - python setup.py test
   - bash tests/build_example.sh
   - nodejs -v
+  - cd tests
+  - ls
 
 notifications:
   emails:
