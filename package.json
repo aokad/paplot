@@ -15,7 +15,7 @@
     "power-assert": "^1.4.4"
   },
   "scripts": {
-    "test": "istanbul cover --print both _mocha -- js/test.js --require intelli-espower-loader --timeout 10000 --config=test/.istanbul.yml"
+    "test": "istanbul cover --print both _mocha -- tests/js/test.js --require intelli-espower-loader --timeout 10000 --config=tests/.istanbul.yml"
   },
   "author": "Ai Okada <aiokada@hgc.jp>",
   "license": "MIT"

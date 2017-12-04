@@ -54,7 +54,7 @@ subplot_template = """
 </tr>
 """
 js_set_sub_add = """
-    subs.push(add_subdiv("div_sub{i}", "sub{i}", {type}));"""
+    subs.push(mut_draw.add_subdiv("div_sub{i}", "sub{i}", {type}));"""
 js_set_sub_select = """
     subs[{i}].bar_selected = function(key, on) {{
         mut_draw.sub_selected(key, on);
