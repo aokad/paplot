@@ -12,7 +12,7 @@ script:
   - bash tests/build_example.sh
 
 before_install:
- - apt-get istall -y nodejs npm
+ - apt-get install -y nodejs npm
 
 notifications:
   emails:
