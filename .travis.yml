@@ -11,6 +11,9 @@ script:
   - python setup.py test
   - bash tests/build_example.sh
 
+before_install:
+ - apt-get istall -y nodejs npm
+
 notifications:
   emails:
     - aiokada@hgc.jp
