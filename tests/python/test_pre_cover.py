@@ -13,8 +13,8 @@ import subprocess
 
 class TestSet(unittest.TestCase):
 
-    CURRENT = os.path.dirname(__file__)
-    dataset = CURRENT + "/dataset/"
+    CURRENT = os.path.join(os.path.dirname(__file__), "../")
+    dataset = CURRENT + "dataset/"
     REF = CURRENT + "/ref/"
     ALT = CURRENT + "/src/"
     

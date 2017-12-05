@@ -27,3 +27,16 @@ def load_html(path):
         
     return text
 
+def init_args():
+    class args:
+        def __init__(self):
+            self.input = ""
+            self.output_dir = ""
+            self.project_name = ""
+            self.config_file = ""
+            self.title = ""
+            self.ellipsis = ""
+            self.overview = ""
+            self.remarks = ""
+
+    return args()

@@ -13,8 +13,8 @@ import subprocess
 
 class TestSet(unittest.TestCase):
 
-    CURRENT = os.path.dirname(__file__)
-    dataset = CURRENT + "/dataset/pmsignature/"
+    CURRENT = os.path.join(os.path.dirname(__file__), "../")
+    dataset = CURRENT + "dataset/pmsignature/"
     REF = CURRENT + "/ref/pmsignature/"
     ALT = CURRENT + "/alt/pmsignature/"
     
