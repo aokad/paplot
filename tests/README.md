@@ -9,15 +9,18 @@
  - python ... 入力ファイルからレポートを作成する機能についてのテストコードです。
  - js (javascript) ... 出力されたレポートについてのテストコードです。
  - dataset ... 入力ファイルと設定ファイル群です。
+ - example ... チュートリアルのサンプルデータのビルドに使用します。
  - ref ... 出力レポートの正解データです。
 
 ファイル
 
  - .istanbul.yml ... jsのカバレッジ計算ツールの設定ファイルです。
  - build.sh ... サンプルデータからレポートを作成します。
+ - Dockerfile .. 試験環境構築に必要であれば使用します。
  - package.json ... jsの試験環境構築に作成します。 `npm install` で自動的に読み込まれます。
  - package-lock.json ... `npm install` で自動的に作成されます。
  - README.md ... このファイルです。
+ - sonar-scanner.properties ... sonarの設定ファイルひな型です。実際には使用しません。
 
 ## テスト実行方法
 
@@ -127,7 +130,7 @@ sonar-scanner-cli-3.0.3.778-linux/sonar-scanner-3.0.3.778-linux/conf/sonar-scann
 sonar.host.url=https://sonarcloud.io
 
 sonar.organization=xxxx
-sonar.login=xxxx (暗号化できれば上記をtravis ciで全自動化できるんだけれど・・・)
+sonar.login=xxxx
 
 sonar.javascript.lcov.reportPaths=tests/coverage/lcov.info,.coverage
 sonar.projectKey=paplot_devel
@@ -141,3 +144,15 @@ sonar.inclusions=paplot,scripts/*.py,scripts/paplot/*.py,scripts/paplot/subcode/
 sonar-scanner-cli-3.0.3.778-linux/sonar-scanner-3.0.3.778-linux/bin/sonar-scanner
 ```
 
+## docker版
+
+まずpaplotをダウンロードします。
+
+```
+git clone <paplot.git>
+cd paplot/test
+docker build -t aokad/paplot-test:0.5.6 .
+docker run -v /c/Users/Okada/***/paplot/:/work aokad/paplot-test:0.5.6
+```
+
+sonarcloudだけ手動でやります。
