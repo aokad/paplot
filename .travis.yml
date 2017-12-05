@@ -17,11 +17,15 @@ addons:
 
 script:
   - python setup.py build install
-  - python setup.py test
+  - coverage run --source=./scripts setup.py test
+  - coverage xml
   - bash tests/build_example.sh
   - cd tests
   - npm install
   - npm test
+
+before_script:
+ - pip install coverage
 
 notifications:
   emails:
