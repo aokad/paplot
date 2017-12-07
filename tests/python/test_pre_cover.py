@@ -13,8 +13,8 @@ import subprocess
 
 class TestSet(unittest.TestCase):
 
-    CURRENT = os.path.join(os.path.dirname(__file__), "../")
-    dataset = CURRENT + "dataset/"
+    CURRENT = os.path.abspath(os.path.dirname(__file__) + "/../")
+    dataset = CURRENT + "/dataset/"
     REF = CURRENT + "/ref/"
     ALT = CURRENT + "/src/"
     
@@ -56,10 +56,10 @@ class TestSet(unittest.TestCase):
 
     def test1_04_signature(self):
         self.assertEqual(
-            subprocess.check_call('python paplot signature %s/signature/cover/data2.json %s html -c %s/signature/cover/paplot.cfg' % (self.dataset, self.ALT, self.dataset), shell=True),
+            subprocess.check_call('python paplot signature %s/signature/cover/stack.json %s html -c %s/signature/cover/stack.cfg' % (self.dataset, self.ALT, self.dataset), shell=True),
             0)
         
     def test1_05_pmsignature(self):
         self.assertEqual(
-            subprocess.check_call('python paplot pmsignature %s/pmsignature/cover/data2.json %s html -c %s/pmsignature/cover/paplot.cfg' % (self.dataset, self.ALT, self.dataset), shell=True),
+            subprocess.check_call('python paplot pmsignature %s/pmsignature/cover/stack.json %s html -c %s/pmsignature/cover/stack.cfg' % (self.dataset, self.ALT, self.dataset), shell=True),
             0)

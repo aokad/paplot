@@ -7,7 +7,7 @@ Created on Tue Jun 28 13:18:34 2016
 
 import os
 import sys
-TARGET = os.path.join(os.path.dirname(__file__), '../../scripts/')
+TARGET = os.path.abspath(os.path.dirname(__file__) + "/../scripts/")
 sys.path.append(TARGET)
 
 import unittest
@@ -16,7 +16,7 @@ import paplot.run
 
 class TestSet(unittest.TestCase):
 
-    CURRENT = os.path.join(os.path.dirname(__file__), "../")
+    CURRENT = os.path.abspath(os.path.dirname(__file__) + "/../")
     dataset = CURRENT + "/dataset/mutation/"
     ALT = CURRENT + "/alt/func_mutation"
     
