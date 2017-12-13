@@ -22,6 +22,7 @@ script:
   - coverage report
   - bash tests/build_example.sh
   - cd tests
+  - npm i -g npm
   - npm install
   - npm test
 
