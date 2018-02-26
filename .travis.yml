@@ -25,9 +25,14 @@ script:
   - npm i -g npm
   - npm install
   - npm test
+  - cd ../
+  - sonar-scanner -Dsonar.host.url=https://sonarcloud.io -Dsonar.projectKey=paplot_devel -Dsonar.sources=. -Dsonar.inclusions=paplot,scripts/*.py,scripts/paplot/*.py,scripts/paplot/subcode/*.py,tests/src/js/*.js,tests/src/html/*.js -Dsonar.python.coverage.reportPath=coverage.xml -Dsonar.javascript.lcov.reportPaths=tests/coverage/lcov.info -Dsonar.organization=${SONNAR_KEY} -Dsonar.login=${SONNAR_TOKEN}
 
 before_script:
  - pip install coverage
+ - wget https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.0.3.778-linux.zip
+ - unzip sonar-scanner-cli-3.0.3.778-linux.zip
+ - export PATH=`pwd`/sonar-scanner-3.0.3.778-linux/bin:$PATH
 
 notifications:
   emails:

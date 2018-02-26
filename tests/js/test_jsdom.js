@@ -192,7 +192,11 @@ require('../src/html/data_pmsignature2.js');
                 msig_draw.add_div('div_pm0');
                 msig_draw.init();
                 msig_draw.push_export();
-
+                var btn_svg = document.getElementById("save_svg");
+                btn_svg.click();
+                var btn_png = document.getElementById("save_svg");
+                btn_png.click();
+                
                 assert.equal(0,0)
             });
 

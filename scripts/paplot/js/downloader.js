@@ -45,6 +45,7 @@ downloader = (function() {
             });
         
         menu.append('li')
+            .attr('id', 'save_svg')
             .text('Save as SVG...')
             .style(css_li)
             .on('mouseover', function () {
@@ -59,6 +60,7 @@ downloader = (function() {
         ;
         
         menu.append('li')
+            .attr('id', 'save_png')
             .text('Save as PNG...')
             .style(css_li)
             .on('mouseover', function () {
