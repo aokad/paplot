@@ -9,18 +9,6 @@ python:
   - "3.5"
   - "3.6"
 
-exclude:
-  - python: 2.7
-    ENV: NPM_FLG='T'
-  - python: 3.3
-    ENV: NPM_FLG='F'
-  - python: 3.4
-    ENV: NPM_FLG='F'
-  - python: 3.5
-    ENV: NPM_FLG='F'
-  - python: 3.6
-    ENV: NPM_FLG='F'
-
 addons:
   apt:
     packages:
@@ -29,6 +17,8 @@ addons:
 
 before_script:
  - pip install coverage
+ - export PYVER=`python -V 2>&1 | cut -d' ' -f2 | cut -d . -f 1,2`
+ - if [ "$PYVER" = "2.7" ]; then export NPM_FLG="T"; fi
  - if [ "$NPM_FLG" = "T" ]; then
    wget https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.0.3.778-linux.zip;
    unzip sonar-scanner-cli-3.0.3.778-linux.zip;
