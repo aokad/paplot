@@ -18,21 +18,23 @@ addons:
 script:
   - python setup.py build install
   - coverage run --source=./scripts setup.py test
-  - coverage xml
-  - coverage report
-  - bash tests/build_example.sh
-  - cd tests
-  - npm i -g npm
-  - npm install
-  - npm test
-  - cd ../
-  - sonar-scanner -Dsonar.host.url=https://sonarcloud.io -Dsonar.projectKey=paplot_devel -Dsonar.sources=. -Dsonar.inclusions=paplot,scripts/*.py,scripts/paplot/*.py,scripts/paplot/subcode/*.py,tests/src/js/*.js,tests/src/html/*.js -Dsonar.python.coverage.reportPath=coverage.xml -Dsonar.javascript.lcov.reportPaths=tests/coverage/lcov.info -Dsonar.organization=${SONNAR_KEY} -Dsonar.login=${SONNAR_TOKEN}
+  - if test NPM_FLG="T"; then coverage xml; fi
+  - if test NPM_FLG="T"; then coverage report; fi
+  - if test NPM_FLG="T"; then bash tests/build_example.sh; fi
+  - if test NPM_FLG="T"; then cd tests; fi
+  - if test NPM_FLG="T"; then npm i -g npm; fi
+  - if test NPM_FLG="T"; then npm install; fi
+  - if test NPM_FLG="T"; then npm test; fi
+  - if test NPM_FLG="T"; then cd ../; fi
+  - if test NPM_FLG="T"; then sonar-scanner -Dsonar.host.url=https://sonarcloud.io -Dsonar.projectKey=paplot_devel -Dsonar.sources=. -Dsonar.inclusions=paplot,scripts/*.py,scripts/paplot/*.py,scripts/paplot/subcode/*.py,tests/src/js/*.js,tests/src/html/*.js -Dsonar.python.coverage.reportPath=coverage.xml -Dsonar.javascript.lcov.reportPaths=tests/coverage/lcov.info -Dsonar.organization=${SONNAR_KEY} -Dsonar.login=${SONNAR_TOKEN}; fi
 
 before_script:
  - pip install coverage
  - wget https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.0.3.778-linux.zip
  - unzip sonar-scanner-cli-3.0.3.778-linux.zip
  - export PATH=`pwd`/sonar-scanner-3.0.3.778-linux/bin:$PATH
+ - export PYVER=`python -V 2>&1 | cut -d' ' -f2 | cut -d . -f 1,2`
+ - export NPM_FLG=""; if test $pyver="2.7"; then export NPM_FLG="T"; fi
 
 notifications:
   emails:
